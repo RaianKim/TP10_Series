@@ -13,12 +13,19 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+            //VerDetalleTemporadas
+            //VerDetalleActores
+            //VerDetalleMasInfo
     public IActionResult Index()
     {
         ViewBag.series = BD.ListarSeries();
-        ViewBag.temporadas = BD.ListarSeries();
-        ViewBag.actores = BD.ListarActores();
         return View();
+    }
+
+    public Temporadas VerDetalleTemporadas(int IdSerie)
+    {
+        ViewBag.temp = BD.VerDetalleTemporadas(IdSerie);
+        return ViewBag.temp;
     }
 
 

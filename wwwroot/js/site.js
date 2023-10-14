@@ -1,4 +1,14 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿function VerDetalleTemporadas(IdS)
+    {
+        $.ajax({
+            url:'/HomeController/VerDetalleTemporadas',
+            data:{IdSerie : IdS},
+            type:'GET',
+            dataType:'json',
+            success: function(response)
+            {
+                //$("ModalTemporadas").html(response.)
+            }
+        });
+        
+    }
