@@ -28,15 +28,25 @@ public static class BD
         }
         return series;
     }
-        public static Temporadas  VerDetalleTemporadas(int IdSerie)
+        public static List<Temporadas>  VerDetalleTemporadas(int IdSerie)
     {
         string sql = "Select * From Temporadas Where IdSerie=@pidserie";
-        Temporadas temporadas = new Temporadas();
+        List<Temporadas> tempo = new List<Temporadas>();
         using(SqlConnection db = new SqlConnection(ConnectionString))
         {
-            temporadas = db.QueryFirstOrDefault<Temporadas>(sql,new{pidserie = IdSerie});
+            tempo = db.Query<Temporadas>(sql,new{pidserie = IdSerie}).ToList();
         }
-        return temporadas;
+        return tempo;
     }
 
+        public static Series ListarSinopsis()
+    {
+        string sql = "Select Series.Sinopsis From Series";
+        Series Sinopsis = new Series();
+        using(SqlConnection db = new SqlConnection(ConnectionString))
+        {
+            Sinopsis = db.QueryFirstOrDefault<Series>(sql);
+        }
+        return Sinopsis;
+    }
 }

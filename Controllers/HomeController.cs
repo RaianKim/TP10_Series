@@ -22,10 +22,16 @@ public class HomeController : Controller
         return View();
     }
 
-    public Temporadas VerDetalleTemporadas(int IdSerie)
+    public List<Temporadas> VerDetalleTemporadas(int IdSerie)
     {
         ViewBag.temp = BD.VerDetalleTemporadas(IdSerie);
         return ViewBag.temp;
+    }
+
+        public List<Temporadas> VerDetalleInfo(int IdSerie)
+    {
+        ViewBag.sinopsis = BD.ListarSinopsis();
+        return ViewBag.sinopsis;
     }
 
 
