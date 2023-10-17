@@ -24,16 +24,17 @@ public class HomeController : Controller
 
     public List<Temporadas> VerDetalleTemporadas(int IdSerie)
     {
-        ViewBag.temp = BD.VerDetalleTemporadas(IdSerie);
-        return ViewBag.temp;
+        return BD.VerDetalleTemporadas(IdSerie);
     }
 
-        public List<Temporadas> VerDetalleInfo(int IdSerie)
+    public Series VerDetalleSinopsis(int IdSerie)
     {
-        ViewBag.sinopsis = BD.ListarSinopsis();
-        return ViewBag.sinopsis;
+        return BD.VerDetalleSinopsis(IdSerie);
     }
-
+    public List<Actores> VerDetalleActores(int IdSerie)
+    {
+        return BD.VerDetalleActores(IdSerie);
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

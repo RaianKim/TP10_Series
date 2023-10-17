@@ -39,14 +39,25 @@ public static class BD
         return tempo;
     }
 
-        public static Series ListarSinopsis()
+        public static Series VerDetalleSinopsis(int IdSerie)
     {
-        string sql = "Select Series.Sinopsis From Series";
+        string sql = "Select * From Series Where IdSerie = @pidserie";
         Series Sinopsis = new Series();
         using(SqlConnection db = new SqlConnection(ConnectionString))
         {
-            Sinopsis = db.QueryFirstOrDefault<Series>(sql);
+            Sinopsis = db.QueryFirstOrDefault<Series>(sql, new {pidserie = IdSerie});
         }
         return Sinopsis;
+    }
+
+        public static List<Actores> VerDetalleActores(int IdSerie)
+    {
+        string sql = "Select * From Actores Where IdSerie = @pidserie";
+        List<Actores> listactores = new List<Actores>();
+        using(SqlConnection db = new SqlConnection(ConnectionString))
+        {
+            listactores = db.Query<Actores>(sql, new {pidserie = IdSerie}).ToList();
+        }
+        return listactores;
     }
 }

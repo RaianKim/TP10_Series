@@ -14,6 +14,7 @@
 
         @foreach (Series series in ViewBag.series)
     {
+        
         <div class="card" style="width: 18rem;">
             <img src="@series.ImagenSerie" alt="">
                 <div class="card-body">
@@ -23,10 +24,12 @@
                       Temporadas
                     </button>
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTemporadas" onclick=" VerDetalleTemporadas(@series.IdSerie)">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTemporadas" onclick=" VerDetalleSinopsis(@series.IdSerie)">
                       Info
                     </button>
-                    
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTemporadas" onclick=" VerDetalleActores(@series.IdSerie)">
+                      Actores
+                    </button>
                     <div class="modal fade" id="ModalTemporadas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -35,9 +38,9 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                              <div class="idtemporadas"></div>
-                              <div class="idactores"></div>
-                              <div class="idmasinfo"></div>
+                              <div id="idtemporadas"></div>
+                              <div id="idactores"></div>
+                              <div id="idmasinfo"></div>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
