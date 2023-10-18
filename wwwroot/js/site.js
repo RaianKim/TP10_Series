@@ -13,6 +13,7 @@
             //}    
         function(response)
             {
+                $("#idtitulo").html("Titulos de la temporada de la serie de " + $("#idtitulo").value);
                 $("#idmasinfo").html("");
                 $("#idactores").html("");
                 let temporadaHTML = '';
@@ -48,6 +49,7 @@ function VerDetalleSinopsis(idserie)
         dataType:'JSON',
         success: function(response)
             {
+                $("#idtitulo").html("Detalle de la serie de " + response.nombre);
                 $("#idtemporadas").html("");
                 $("#idactores").html("");
                 $("#idmasinfo").html("Resumen: " + response.sinopsis);
@@ -69,6 +71,7 @@ function VerDetalleActores(idserie)
         dataType:'JSON',
         success: function(response)
             {
+                //$("#idtitulo").html("Nombre de los actores de la serie de " );
                 $("#idtemporadas").html("");
                 $("#idmasinfo").html("");
                 let actoresHTML = '';
@@ -77,6 +80,7 @@ function VerDetalleActores(idserie)
                 }
                 // Agrega el string HTML al contenedor.
                 $("#idactores").html(actoresHTML);
+                
             },
             complete : function(xhr,status)
             {
