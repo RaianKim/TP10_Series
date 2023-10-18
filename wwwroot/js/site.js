@@ -1,4 +1,5 @@
-﻿function VerDetalleTemporadas(IdS)
+﻿let aux = "";
+function VerDetalleTemporadas(IdS)
 {
     $.ajax({
         url:'/Home/VerDetalleTemporadas',
@@ -13,7 +14,8 @@
             //}    
         function(response)
             {
-                $("#idtitulo").html("Titulos de la temporada de la serie de " + $("#idtitulo").value);
+                console.log(document.getElementById("idtitulo").valueOf());
+                $("#idtitulo").html("Titulos de la temporada de la serie de " + $("#idtitulo").valueOf());
                 $("#idmasinfo").html("");
                 $("#idactores").html("");
                 let temporadaHTML = '';
@@ -22,6 +24,7 @@
                 }
                 // Agrega el string HTML al contenedor.
                 $("#idtemporadas").html(temporadaHTML);
+                
               },
             complete : function(xhr,status)
             {

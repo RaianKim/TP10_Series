@@ -24,7 +24,6 @@ public class HomeController : Controller
 
     public List<Temporadas> VerDetalleTemporadas(int IdSerie)
     {
-        ViewBag.series = BD.ListarSeries();
         return BD.VerDetalleTemporadas(IdSerie);
     }
 
@@ -34,7 +33,6 @@ public class HomeController : Controller
     }
     public List<Actores> VerDetalleActores(int IdSerie)
     {
-        ViewBag.series = BD.ListarSeries();
         return BD.VerDetalleActores(IdSerie);
     }
 

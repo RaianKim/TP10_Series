@@ -7,17 +7,6 @@ namespace TP10.Models;
 public static class BD
 {
     private static string ConnectionString = @"Server=DESKTOP-E3OHN6P\SQLEXPRESS01; DataBase=BDSeries; Trusted_Connection=True";
-
-    public static List<Actores> ListarActores()
-    {
-        string sql = "Select * From Actores";
-        List<Actores> actores = new List<Actores>();
-        using(SqlConnection db = new SqlConnection(ConnectionString))
-        {
-            actores = db.Query<Actores>(sql).ToList();
-        }
-        return actores;
-    }
         public static List<Series> ListarSeries()
     {
         string sql = "Select S.IdSerie,S.Nombre,S.AñoInicio,S.Sinopsis,S.ImagenSerie From Series S";
