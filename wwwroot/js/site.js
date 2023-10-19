@@ -1,5 +1,4 @@
-﻿let aux = "";
-function VerDetalleTemporadas(IdS)
+﻿function VerDetalleTemporadas(IdS,Nom)
 {
     $.ajax({
         url:'/Home/VerDetalleTemporadas',
@@ -14,8 +13,7 @@ function VerDetalleTemporadas(IdS)
             //}    
         function(response)
             {
-                console.log(document.getElementById("idtitulo").valueOf());
-                $("#idtitulo").html("Titulos de la temporada de la serie de " + $("#idtitulo").valueOf());
+                $("#idtitulo").html("Titulos de la temporada de la serie de " + Nom);
                 $("#idmasinfo").html("");
                 $("#idactores").html("");
                 let temporadaHTML = '';
@@ -65,7 +63,7 @@ function VerDetalleSinopsis(idserie)
         });
 }
 
-function VerDetalleActores(idserie)
+function VerDetalleActores(idserie,Nom)
 {
     $.ajax({
         url:'/Home/VerDetalleActores',
@@ -74,7 +72,7 @@ function VerDetalleActores(idserie)
         dataType:'JSON',
         success: function(response)
             {
-                //$("#idtitulo").html("Nombre de los actores de la serie de " );
+                $("#idtitulo").html("Nombre de los actores de la serie de " + Nom);
                 $("#idtemporadas").html("");
                 $("#idmasinfo").html("");
                 let actoresHTML = '';

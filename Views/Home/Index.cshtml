@@ -24,21 +24,21 @@
                 <div class="card-body">
                     <p>@series.Nombre</p>
                     
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTemporadas" onclick=" VerDetalleTemporadas(@series.IdSerie)">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTemporadas" onclick=" VerDetalleTemporadas(@series.IdSerie,'@series.Nombre')">
                       Temporadas
                     </button>
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTemporadas" onclick=" VerDetalleSinopsis(@series.IdSerie)">
                       Info
                     </button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTemporadas" onclick=" VerDetalleActores(@series.IdSerie)">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTemporadas" onclick=" VerDetalleActores(@series.IdSerie,'@series.Nombre')">
                       Actores
                     </button>
                     <div class="modal fade" id="ModalTemporadas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="idtitulo" value="@series.Nombre">@series.Nombre</h1>
+                            <h1 class="modal-title fs-5" id="idtitulo"></h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
