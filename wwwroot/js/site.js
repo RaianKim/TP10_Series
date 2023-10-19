@@ -6,11 +6,6 @@
         type:'GET',
         dataType:'JSON',
         success: 
-            //function(response)
-            //{
-            //    for (const temporada of response) {
-            //    $("#idtemporadas").insertAdjacentHTML('beforeend',`${temporada.tituloTemporada}<br>`);
-            //}    
         function(response)
             {
                 $("#idtitulo").html("Titulos de la temporada de la serie de " + Nom);
