@@ -45,10 +45,15 @@ function VerDetalleSinopsis(idserie)
         dataType:'JSON',
         success: function(response)
             {
+                let temporadaHTML = '';
+                temporadaHTML += `<img class="imgTempo" src="${response.imagenSerie}">`;
+                temporadaHTML += `<p>Nombre de la serie : ${response.nombre}</p>`;
+                temporadaHTML += `<p>Año de inicio : ${response.añoInicio}</p>`;
+                temporadaHTML += `<p>Resumen: ${response.sinopsis}</p>`;
                 $("#idtitulo").html("Detalle de la serie de " + response.nombre);
                 $("#idtemporadas").html("");
                 $("#idactores").html("");
-                $("#idmasinfo").html("Resumen: " + response.sinopsis);
+                $("#idmasinfo").html(temporadaHTML);
             },
             complete : function(xhr,status)
             {

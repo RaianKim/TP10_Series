@@ -40,3 +40,7 @@ body {
   display: flex;
   justify-content: center;
 }
+.imgTempo
+{
+  width: 100%;
+}
